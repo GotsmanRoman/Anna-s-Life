@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #232323;
+}
+.container {
+  padding: 0px 40px 0px 40px;
+}
+section {
+  z-index: 2;
+}
+.gallery {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.tab {
+  position: relative;
+  height: 300px;
+  width: calc(100% - 20px);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 5px #000;
+  z-index: 10;
+  transform: skewX(-10deg);
+  transition: transform 500ms ease-in-out;
+}
+.tab__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+h1 {
+  font-family: "Shantell Sans", serif;
+  font-style: 50px;
+  margin-top: 10px;
+  text-align: center;
+  color: #fff;
+}
+.tab {
+  cursor: pointer;
+}
+.description {
+  position: absolute;
+  top: 0;
+  padding: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  box-shadow: 0 -250px 150px -250px #000 inset, 0 -250px 150px -250px #000 inset;
+  transform: translateY(100%);
+  transition: transform 500ms ease-in-out;
+}
+.tab:hover .description {
+  transform: translateY(0%);
+}
+.title__description {
+  margin-top: 10px;
+  font-family: "Lobster", sans-serif;
+  color: #fff;
+  font-size: 34px;
+  text-align: center;
+}
+.tlo {
+  width: 100%;
+  height: 2896px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.tlo::before,
+.tlo::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50%;
+
+  transition: transform 500ms ease-in-out;
+}
+.tlo::before {
+  background-color: rgb(9, 75, 255);
+  transform: translateY(-150%);
+}
+.tlo::after {
+  background-color: rgb(217, 255, 0);
+  transform: translateY(150%);
+}
+.gallery:hover ~ .tlo::before,
+.gallery:hover ~ .tlo::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+.title {
+  z-index: 3;
+  position: relative;
+}
+.title__text {
+  font-family: "Shantell Sans", serif;
+  color: antiquewhite;
+  font-size: 34px;
+}
+.title__text span {
+  color: rgb(217, 255, 0);
+}
+.tab__image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 500ms ease-in-out;
+
+  filter: brightness(0.7);
+}
+.tab:hover .tab__image {
+  filter: brightness(1);
+}
+.button {
+  height: 70px;
+  width: 200px;
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  background-color: #2196f3;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.button:hover {
+  background-color: #13a51f;
+}
+.button__link {
+  font-family: "Shantell Sans";
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+@media screen and (min-width: 320px) {
+  .title__text {
+    font-size: 38px;
+  }
+  .tlo {
+    height: 2882px;
+  }
+  .title__description {
+    font-size: 24px;
+  }
+}
+@media screen and (min-width: 480px) {
+  .title__text {
+    font-size: 30px;
+  }
+  .tab {
+    width: calc(100% - 20px);
+  }
+  .tlo {
+    height: 2922px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .title__text {
+    font-size: 48px;
+  }
+  .tab {
+    width: calc(50% - 20px);
+  }
+  .tlo {
+    height: 1588px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .title__text {
+    font-size: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .tab {
+    width: calc(33% - 20px);
+  }
+  .tlo {
+    height: 1064px;
+  }
+  .title__text {
+    font-size: 46px;
+  }
+  .title__description {
+    font-size: 32px;
+  }
+}
+@media screen and (min-width: 1600px) {
+  .tab {
+    width: calc(33% - 60px);
+  }
+  .tlo {
+    height: 100vh;
+  }
+}

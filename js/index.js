@@ -1,6 +1,4 @@
-import { galleryItems } from "./indexItems.js";
-const modalRef = document.querySelector(".modal");
-const modalContainerRef = document.querySelector(".modal__container");
+import { galleryItems } from "./data.js";
 const galleryRef = document.querySelector(".gallery");
 
 // Change code below this line
@@ -11,15 +9,15 @@ function createGalleryMarkUp() {
   return galleryItems
     .map((elem) => {
       return `
-        <a class="tab" href="${elem.original}?cat=${elem.cat}">
+        <a class="gallery__item" href="${elem.original}?cat=${elem.cat}">
           <img
-            class="tab__image"
+            class="gallery__image"
             src="${elem.preview}"
             alt="${elem.alt}"
           />
-          <div class="description">
-          <h1 class="description__header">${elem.alt}</h1>
-          <p class="description__text">
+          <div class="gallery__description">
+          <h1 class="gallery__header">${elem.alt}</h1>
+          <p class="gallery__text">
             ${elem.description}
           </p>
         </div>

@@ -1,7 +1,5 @@
-import { galleryItems } from "./pagesItems.js";
-const modalRef = document.querySelector(".modal");
-const modalContainerRef = document.querySelector(".modal__container");
-const titleContainerRef = document.querySelector(".title__description");
+import { galleryItems } from "./data.js";
+const titleContainerRef = document.querySelector(".header__description");
 const galleryRef = document.querySelector(".gallery");
 
 // Change code below this line
@@ -11,15 +9,15 @@ galleryRef.innerHTML = createGalleryMarkUp();
 function createGalleryMarkUp() {
   let params = new URL(document.location).searchParams;
   let cat = parseInt(params.get("cat")); // is the number 18
+  if (!cat) cat = 0;
   titleContainerRef.innerHTML = galleryItems[cat].description;
-  console.log(cat);
-  console.log(galleryItems);
+
   return galleryItems[cat].data
     .map((elem) => {
       return `
-        <a class="tab" href="${elem.original}">
+        <a class="gallery__item" href="${elem.original}">
           <img
-            class="tab__image"
+            class="gallery__image"
             src="${elem.preview}"
             alt="${elem.alt}"
           />

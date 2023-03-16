@@ -85,7 +85,7 @@ section {
 .header__description {
   margin-top: 20px;
   font-family: "Lobster", sans-serif;
-  color: #fff;
+  color: #ffcb00;
   font-size: 34px;
   text-align: center;
 }
@@ -118,19 +118,15 @@ section {
   transition: transform 500ms ease-in-out;
 }
 .tlo::before {
-  background-color: rgb(9, 75, 255);
-  transform: translateY(-150%);
+  background-color: rgba(9, 105, 255, 0.6);
 }
 .tlo::after {
   background-color: rgb(217, 255, 0);
-  transform: translateY(150%);
-}
-.gallery:hover ~ .tlo::before, .gallery:hover ~ .tlo::after {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .button {
+  position: relative;
+  z-index: 300;
   height: 70px;
   width: 200px;
   font-size: 20px;
@@ -183,9 +179,20 @@ section {
     width: calc(100% - 20px);
   }
 }
+@media screen and (min-width: 640px) {
+  .header__title {
+    font-size: 40px;
+  }
+  .header__description {
+    font-size: 30px;
+  }
+}
 @media screen and (min-width: 720px) {
   .header__title {
     font-size: 48px;
+  }
+  .header__description {
+    font-size: 36px;
   }
   .gallery__item {
     width: calc(50% - 20px);
@@ -204,7 +211,18 @@ section {
     font-size: 46px;
   }
   .header__description {
-    font-size: 32px;
+    font-size: 42px;
+  }
+  .tlo::before {
+    transform: translateY(-150%);
+  }
+  .tlo::after {
+    transform: translateY(150%);
+  }
+  .gallery:hover ~ .tlo::before,
+  .gallery:hover ~ .tlo::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media screen and (min-width: 1600px) {

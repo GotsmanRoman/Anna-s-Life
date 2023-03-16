@@ -118,7 +118,7 @@ section {
   transition: transform 500ms ease-in-out;
 }
 .tlo::before {
-  background-color: rgb(9, 75, 255);
+  background-color: rgba(9, 105, 255, 0.6);
 }
 .tlo::after {
   background-color: rgb(217, 255, 0);

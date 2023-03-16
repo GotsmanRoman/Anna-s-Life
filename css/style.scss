@@ -34,7 +34,7 @@ section {
     transform: skewX(-10deg);
     transition: transform 500ms ease-in-out;
     cursor: pointer;
-    r: 10px solid #fff;
+    border: 10px solid #e0e0e0;
   }
   &__image {
     position: absolute;
@@ -117,16 +117,9 @@ section {
   }
   &::before {
     background-color: rgb(9, 75, 255);
-    transform: translateY(-150%);
   }
   &::after {
     background-color: rgb(217, 255, 0);
-    transform: translateY(150%);
-  }
-  .gallery:hover ~ &::before,
-  .gallery:hover ~ &::after {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 @media screen and (max-width: 1279px) {
@@ -182,6 +175,17 @@ section {
   }
   .title__description {
     font-size: 32px;
+  }
+  .tlo::before {
+    transform: translateY(-150%);
+  }
+  .tlo::after {
+    transform: translateY(150%);
+  }
+  .gallery:hover ~ .tlo::before,
+  .gallery:hover ~ .tlo::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 @media screen and (min-width: 1600px) {
